@@ -5,7 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.23">
-<title>python knowledge</title>
+<meta name="author" content="Firstname Lastname">
+<title>AsciiDoc Article Title</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -434,410 +435,1125 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/github.min.css">
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>python knowledge</h1>
+<h1>AsciiDoc Article Title</h1>
+<div class="details">
+<span id="author" class="author">Firstname Lastname</span><br>
+<span id="email" class="email"><a href="mailto:author@asciidoctor.org">author@asciidoctor.org</a></span><br>
+<span id="revnumber">version 1.0,</span>
+<span id="revdate">July 29, 2014, Asciidoctor 1.5 article template</span>
+</div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_for_文">for 文</a></li>
-<li><a href="#_vscode">vscode</a></li>
-<li><a href="#_code_format">code format</a></li>
-<li><a href="#_code_style">code style</a>
+<li><a href="#_text_formatting">Text formatting</a>
 <ul class="sectlevel2">
-<li><a href="#_キーワード引数を使うかどうか">キーワード引数を使うかどうか</a></li>
-<li><a href="#_アスタリスク">アスタリスク (*)</a></li>
-<li><a href="#_アンダーバー">アンダーバー (_)</a></li>
+<li><a href="#_links">Links</a></li>
+<li><a href="#_replacements">Replacements</a></li>
+<li><a href="#_math">Math</a></li>
 </ul>
 </li>
-<li><a href="#_pytest">pytest</a></li>
-<li><a href="#_alembic">alembic</a>
+<li><a href="#_images">Images</a></li>
+<li><a href="#_footnotes">Footnotes</a></li>
+<li><a href="#_headings">Headings</a>
 <ul class="sectlevel2">
-<li><a href="#_データ型一覧postgresql_ベース">データ型一覧(PostgreSQL ベース)</a></li>
+<li><a href="#_second_level_heading">Second level heading</a>
+<ul class="sectlevel3">
+<li><a href="#_third_level_heading">Third level heading</a>
+<ul class="sectlevel4">
+<li><a href="#_fourth_level_heading">Fourth level heading</a>
+<ul class="sectlevel5">
+<li><a href="#_fifth_level_heading">Fifth level heading</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_lists">Lists</a>
+<ul class="sectlevel2">
+<li><a href="#_unordered_lists">Unordered lists</a></li>
+<li><a href="#_ordered_lists">Ordered lists</a></li>
+<li><a href="#_labelled_lists">Labelled lists</a></li>
+<li><a href="#_mixed_lists">Mixed lists</a></li>
+</ul>
+</li>
+<li><a href="#_blocks">Blocks</a></li>
+<li><a href="#_tables">Tables</a></li>
+<li><a href="#_quotes">Quotes</a></li>
+<li><a href="#_admonitions">Admonitions</a>
+<ul class="sectlevel2">
+<li><a href="#_admonition_blocks">Admonition blocks</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="_for_文">for 文</h2>
+<div id="preamble">
 <div class="sectionbody">
+<div class="paragraph">
+<p>Content entered directly below the header but before the first section heading is called the preamble.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_text_formatting">Text formatting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is a paragraph of regular text.</p>
+</div>
+<div class="paragraph">
+<p>This is a paragraph with a <strong>bold</strong> word and an <em>italicized</em> word. <strong><em>Bold italic</em></strong> is also possible.</p>
+</div>
+<div class="paragraph">
+<p>Words can also have internal b<strong>ol</strong>d and it<em>ali</em>c formatting.</p>
+</div>
+<div class="paragraph">
+<p>Some constrained <code>monospace text</code>, and some <code>u</code>nconstrained <code>m</code>onospace <code>t</code>ext.</p>
+</div>
+<div class="paragraph">
+<p>Some Superscript<sup>®</sup> text and some subscript text: H<sub>2</sub>O.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>This is a paragraph of regular text.
+
+This is a paragraph with a *bold* word and an _italicized_ word. *_Bold italic_* is also possible.
+
+Words can also have internal b**ol**d and it__ali__c formatting.
+
+Some constrained `monospace text`, and some ``u``nconstrained ``m``onospace ``t``ext.
+
+Some Superscript^®^ text and some subscript text: H~2~O.</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_links">Links</h3>
+<div class="paragraph">
+<p>The text at the end of this sentence is cross referenced to <a href="#_third_level_heading">the third level heading</a></p>
+</div>
+<div class="paragraph">
+<p>This is a link to the <a href="https://asciidoctor.org/docs/user-manual/" target="_blank" rel="noopener">Asciidoctor User Manual</a>.</p>
+</div>
+<div class="paragraph">
+<p>This is an attribute reference <a href="https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/" target="_blank" rel="noopener">which links this text to the Asciidoctor Quick Reference Guide</a>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>The text at the end of this sentence is cross referenced to &lt;&lt;_third_level_heading,the third level heading&gt;&gt;
+
+This is a link to the https://asciidoctor.org/docs/user-manual/[Asciidoctor User Manual^].
+
+This is an attribute reference {quick-uri}[which links this text to the Asciidoctor Quick Reference Guide^].</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_replacements">Replacements</h3>
 <div class="ulist">
 <ul>
 <li>
-<p>ref. <a href="https://note.nkmk.me/python-for-usage/">Pythonのfor文によるループ処理（range, enumerate, zipなど）</a></p>
+<p>copyright: &#169;</p>
 </li>
 <li>
-<p>ref. <a href="https://note.nkmk.me/python-dict-keys-values-items/">Pythonの辞書（dict）のforループ処理（keys, values, items）</a></p>
+<p>registered trademark: &#174;</p>
 </li>
 <li>
-<p>ref. <a href="https://note.nkmk.me/python-list-comprehension/">Pythonリスト内包表記の使い方</a></p>
+<p>trademark: &#8482;</p>
+</li>
+<li>
+<p>em dash (between words):&#8201;&#8212;&#8201;</p>
+</li>
+<li>
+<p>ellipses: &#8230;&#8203;</p>
+</li>
+<li>
+<p>arrows: &#8594; &#8658; &#8592; &#8656;</p>
+</li>
+<li>
+<p>apostrophe: Sam&#8217;s</p>
+</li>
+<li>
+<p>XML entity (e.g., dagger): &#8224;</p>
 </li>
 </ul>
 </div>
 <div class="listingblock">
-<div class="title">単純な for 文</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python"># range を使う (start, stop, step)
-for i in range(0, 3, 1):
-    print(i)
-# 0
-# 1
-# 2
-
-# 配列を処理
-items = ['a', 'b', 'c']
-for item in items:
-    print(item)
-# a
-# b
-# c
-
-# 辞書のループ
-# items 以外にも keys や values がある
-d = {'a': 1, 'b': 2, 'c': 3}
-for key, value in d.items():
-    print(key, value)
-# a 1
-# b 2
-# c 3</code></pre>
+<pre>* copyright: (C)
+* registered trademark: (R)
+* trademark: (TM)
+* em dash (between words): --
+* ellipses: ...
+* arrows: -&gt; =&gt; &lt;- &lt;=
+* apostrophe: Sam's
+* XML entity (e.g., dagger): &amp;#8224;</pre>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_math">Math</h3>
+<div class="paragraph">
+<p>Find the area under the graph of \$y = x^2\$ between \$x= 1\$ and \$x = 2\$.</p>
+</div>
+<div class="paragraph">
+<p>\[ \int_1^2 x^2 dx = \left[ \frac{x^3}{3} \right]_1^2 = \frac{2^3}{3} - \frac{1^3}{3} = \frac{7}{3} \]</p>
 </div>
 <div class="listingblock">
-<div class="title">リスト内包表記</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">odds = [i for i in range(10) if i % 2 == 1]
-print(odds)</code></pre>
+<pre>Find the area under the graph of \$y = x^2\$ between \$x= 1\$ and \$x = 2\$.
+
+\[ \int_1^2 x^2 dx = \left[ \frac{x^3}{3} \right]_1^2 = \frac{2^3}{3} - \frac{1^3}{3} = \frac{7}{3} \]</pre>
 </div>
-</div>
-<div class="listingblock">
-<div class="title">for ループ正常終了後の処理: else</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">for i in range(0, 3, 1):
-    print(i)
-else:
-    # 最後まで実行された場合に処理
-    # break した場合は処理しない(たぶん例外でも処理しない)
-    print('Finish!')</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_vscode">vscode</h2>
+<h2 id="_images">Images</h2>
 <div class="sectionbody">
-<div class="listingblock">
-<div class="title">vscode で読み込む env の指定</div>
+<div class="imageblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
-  "python.envFile": "${workspaceFolder}/.env",
+<img src="resources/picture.jpg" alt="This is the image alt text.">
+</div>
+<div class="title">Figure 1. Image caption</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>.Image caption
+image::resources/picture.jpg[This is the image alt text.]</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_footnotes">Footnotes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This is another paragraph.<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>This is another paragraph.footnote:[This is footnote text and will be displayed at the bottom of the article.]</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_headings">Headings</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_second_level_heading">Second level heading</h3>
+<div class="sect3">
+<h4 id="_third_level_heading">Third level heading</h4>
+<div class="sect4">
+<h5 id="_fourth_level_heading">Fourth level heading</h5>
+<div class="sect5">
+<h6 id="_fifth_level_heading">Fifth level heading</h6>
+<div class="listingblock">
+<div class="content">
+<pre>=== Second level heading
+==== Third level heading
+===== Fourth level heading
+====== Fifth level heading</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_lists">Lists</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_unordered_lists">Unordered lists</h3>
+<div class="ulist">
+<div class="title">Unordered list title</div>
+<ul>
+<li>
+<p>list item 1</p>
+<div class="ulist">
+<ul>
+<li>
+<p>nested list item</p>
+<div class="ulist">
+<ul>
+<li>
+<p>nested nested list item 1</p>
+</li>
+<li>
+<p>nested nested list item 2</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>list item 2</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>.Unordered list title
+* list item 1
+** nested list item
+*** nested nested list item 1
+*** nested nested list item 2
+* list item 2</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ordered_lists">Ordered lists</h3>
+<div class="olist arabic">
+<div class="title">Ordered list title</div>
+<ol class="arabic">
+<li>
+<p>ordered list item</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>nested ordered list item</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>ordered list item</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>second level list item</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>third level list item</p>
+</li>
+<li>
+<p>another third level list item</p>
+</li>
+<li>
+<p>a final third level list item</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>another second level list item</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>.Ordered list title
+. ordered list item
+.. nested ordered list item
+. ordered list item
+.. second level list item
+... third level list item
+... another third level list item
+... a final third level list item
+.. another second level list item</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can override the number scheme for any level by setting its style (the first positional entry in a block attribute list). You can also set the starting number using the start attribute:</p>
+</div>
+<div class="paragraph">
+<p>(スタイル (ブロック属性リストの最初の位置のエントリ) を設定することで、任意のレベルの番号スキームをオーバーライドできます。また、start属性を使用して開始番号を設定することもできます。)</p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i" start="5">
+<li>
+<p>Five</p>
+</li>
+<li>
+<p>Six</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>a</p>
+</li>
+<li>
+<p>b</p>
+</li>
+<li>
+<p>c</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Seven</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>["lowerroman", start=5]
+. Five
+. Six
+[loweralpha]
+.. a
+.. b
+.. c
+. Seven</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_labelled_lists">Labelled lists</h3>
+<div class="paragraph">
+<p>Here&#8217;s an example of a labeled list that identifies parts of a computer:</p>
+</div>
+<div class="paragraph">
+<p>(コンピュータの部品を識別するラベル付きリストの例です。)</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">CPU</dt>
+<dd>
+<p>The brain of the computer.</p>
+</dd>
+<dt class="hdlist1">Hard drive</dt>
+<dd>
+<p>Permanent storage for operating system and/or user files.</p>
+</dd>
+<dt class="hdlist1">RAM</dt>
+<dd>
+<p>Temporarily stores information the CPU uses during operation.</p>
+</dd>
+<dt class="hdlist1">Keyboard</dt>
+<dd>
+<p>Used to enter text or control items on the screen.</p>
+</dd>
+<dt class="hdlist1">Mouse</dt>
+<dd>
+<p>Used to point to and select items on your computer screen.</p>
+</dd>
+<dt class="hdlist1">Monitor</dt>
+<dd>
+<p>Displays information in visual form using text and graphics.</p>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>CPU:: The brain of the computer.
+Hard drive:: Permanent storage for operating system and/or user files.
+RAM:: Temporarily stores information the CPU uses during operation.
+Keyboard:: Used to enter text or control items on the screen.
+Mouse:: Used to point to and select items on your computer screen.
+Monitor:: Displays information in visual form using text and graphics.</pre>
+</div>
+</div>
+<div class="hdlist">
+<div class="title">A horizontal labelled list</div>
+<table>
+<tr>
+<td class="hdlist1">
+CPU
+</td>
+<td class="hdlist2">
+<p>The brain of the computer.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Hard drive
+</td>
+<td class="hdlist2">
+<p>Permanent storage for operating system and/or user files.</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+RAM
+</td>
+<td class="hdlist2">
+<p>Temporarily stores information the CPU uses during operation.</p>
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>.A horizontal labelled list
+[horizontal]
+CPU:: The brain of the computer.
+Hard drive:: Permanent storage for operating system and/or user files.
+RAM:: Temporarily stores information the CPU uses during operation.</pre>
+</div>
+</div>
+<div class="dlist">
+<div class="title">Labelled list with bullets</div>
+<dl>
+<dt class="hdlist1">Diary</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Milk</p>
+</li>
+<li>
+<p>Eggs</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Bakery</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Bread</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Produce</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Bananas</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>.Labelled list with bullets
+Diary::
+* Milk
+* Eggs
+Bakery::
+* Bread
+Produce::
+* Bananas</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mixed_lists">Mixed lists</h3>
+<div class="olist arabic">
+<div class="title">Mixed unordered and ordered lists</div>
+<ol class="arabic">
+<li>
+<p>Linux</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Fedora</p>
+</li>
+<li>
+<p>Ubuntu</p>
+</li>
+<li>
+<p>Slackware</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>BSD</p>
+<div class="ulist">
+<ul>
+<li>
+<p>FreeBSD</p>
+</li>
+<li>
+<p>NetBSD</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>.Mixed unordered and ordered lists
+. Linux
+* Fedora
+* Ubuntu
+* Slackware
+. BSD
+* FreeBSD
+* NetBSD</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here’s a list that mixes all three types of lists:</p>
+</div>
+<div class="paragraph">
+<p>(ここでは、3種類のリストをすべて混ぜ合わせたリストを紹介します。)</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Operating Systems</dt>
+<dd>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Linux</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Fedora</p>
+</li>
+<li>
+<p>Ubuntu</p>
+</li>
+<li>
+<p>Slackware</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>BSD</p>
+<div class="ulist">
+<ul>
+<li>
+<p>FreeBSD</p>
+</li>
+<li>
+<p>NetBSD</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</dd>
+<dt class="hdlist1">Cloud Providers</dt>
+<dd>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>PaaS</p>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenShift</p>
+</li>
+<li>
+<p>CloudBees</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>IaaS</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Amazon EC2</p>
+</li>
+<li>
+<p>Rackspace</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</dd>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Operating Systems::
+  . Linux
+    * Fedora
+    * Ubuntu
+    * Slackware
+  . BSD
+    * FreeBSD
+    * NetBSD
+Cloud Providers::
+  . PaaS
+    * OpenShift
+    * CloudBees
+  . IaaS
+    * Amazon EC2
+    * Rackspace</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>+</code> 記号を使うことでブロックやテーブルを追加することができる。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The header in AsciiDoc must start with a document title.</p>
+<div class="listingblock">
+<div class="content">
+<pre>= Document Title</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Keep in mind that the header is optional.</p>
+</div>
+</li>
+<li>
+<p>Optional Author and Revision information immediately follows the header title.</p>
+<div class="listingblock">
+<div class="content">
+<pre>= Document Title
+Doc Writer &lt;doc.writer@asciidoc.org&gt;
+v1.0, 2013-01-01</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>* The header in AsciiDoc must start with a document title.
++
+----
+= Document Title
+----
++
+Keep in mind that the header is optional.
+
+* Optional Author and Revision information immediately follows the header title.
++
+----
+= Document Title
+Doc Writer &lt;doc.writer@asciidoc.org&gt;
+v1.0, 2013-01-01
+----</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>--</code> でブロック化するとインデントを調整できる。(Open Blocks)</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>grandparent list item</p>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>parent list item</p>
+<div class="ulist">
+<ul>
+<li>
+<p>child list item</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>paragraph attached to grandparent list item</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>* grandparent list item
++
+--
+** parent list item
+*** child list item
+--
++
+paragraph attached to grandparent list item</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_blocks">Blocks</h2>
+<div class="sectionbody">
+<div class="exampleblock">
+<div class="title">Example 1. Example block title</div>
+<div class="content">
+<div class="paragraph">
+<p>Content in an example block is subject to normal substitutions.</p>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>.Example block title
+====
+Content in an example block is subject to normal substitutions.
+====</pre>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Sidebar title</div>
+<div class="paragraph">
+<p>Sidebars contain aside text and are subject to normal substitutions.</p>
+</div>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>.Sidebar title
+****
+Sidebars contain aside text and are subject to normal substitutions.
+****</pre>
+</div>
+</div>
+<div id="id-for-listing-block" class="listingblock">
+<div class="title">Listing block title</div>
+<div class="content">
+<pre>Content in a listing block is subject to verbatim substitutions.
+Listing block content is commonly used to preserve code input.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>[#id-for-listing-block]
+.Listing block title
+----
+Content in a listing block is subject to verbatim substitutions.
+Listing block content is commonly used to preserve code input.
+----</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">code block title</div>
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">public class Person {
+  private String name;
+  public Person(String name) {
+    this.name = name;
+  }
 }</code></pre>
 </div>
 </div>
+<div class="literalblock">
+<div class="content">
+<pre>[source,java]
+.code block title
+----
+public class Person {
+  private String name;
+  public Person(String name) {
+    this.name = name;
+  }
+}
+----</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="title">literal block title</div>
+<div class="content">
+<pre>public class Person {
+  private String name;
+  public Person(String name) {
+    this.name = name;
+  }
+}</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>.literal block title
+....
+public class Person {
+  private String name;
+  public Person(String name) {
+    this.name = name;
+  }
+}
+....</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">callouts</div>
+<div class="content">
+<pre>line of code  <i class="conum" data-value="1"></i><b>(1)</b> <i class="conum" data-value="5"></i><b>(5)</b>
+line of code  <i class="conum" data-value="2"></i><b>(2)</b>
+line of code  <i class="conum" data-value="3"></i><b>(3)</b>
+line of code  <i class="conum" data-value="4"></i><b>(4)</b></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>A callout behind a line comment for C-style languages.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>A callout behind a line comment for Ruby, Python, Perl, etc.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>A callout behind a line comment for Clojure.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>A callout behind a line comment for XML or SGML languages like HTML.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>A callout behind a line comment for C-style languages.</td>
+</tr>
+</table>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>----
+line of code  `// &lt;1&gt; &lt;5&gt;`
+line of code  `# &lt;2&gt;`
+line of code  `;; &lt;3&gt;`
+line of code  `&lt;!--4--&gt;`
+----
+&lt;1&gt; A callout behind a line comment for C-style languages.
+&lt;2&gt; A callout behind a line comment for Ruby, Python, Perl, etc.
+&lt;3&gt; A callout behind a line comment for Clojure.
+&lt;4&gt; A callout behind a line comment for XML or SGML languages like HTML.
+&lt;5&gt; A callout behind a line comment for C-style languages.</pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_code_format">code format</h2>
+<h2 id="_tables">Tables</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. 使用ライブラリ</caption>
+<caption class="title">Table 1. A simple table with a title</caption>
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 60%;">
+<col style="width: 50%;">
+<col style="width: 50%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">項目</th>
-<th class="tableblock halign-left valign-top">値</th>
-<th class="tableblock halign-left valign-top">備考</th>
+<th class="tableblock halign-left valign-top">Column heading 1</th>
+<th class="tableblock halign-left valign-top">Column heading 2</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">formatter</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">autopep8</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/hhatto/autopep8" class="bare">https://github.com/hhatto/autopep8</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Column 1, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Column 2, row 1</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">checker</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">flake8</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://gitlab.com/pycqa/flake8" class="bare">https://gitlab.com/pycqa/flake8</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Column 2, row 2</p></td>
 </tr>
 </tbody>
 </table>
 <div class="listingblock">
-<div class="title">インストール</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># pipenv など仮想環境の使用を推奨
-pip install --dev autopep8 flake8</code></pre>
+<pre>.A simple table with a title
+|===
+|Column heading 1 |Column heading 2
+
+|Column 1, row 1
+|Column 2, row 1
+
+|Column 1, row 2
+|Column 2, row 2
+|===</pre>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. A table containing another nested table</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">\[X_nY_m\]</p></td>
+<td class="tableblock halign-left valign-middle"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>\(X\) a ante \(i\)</p>
+</li>
+<li>
+<p>\(Y\) a ante \(j\)</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-right valign-middle"><div class="content"><table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-right valign-middle"><p class="tableblock">Trad.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-middle"><p class="tableblock">Stock.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-right valign-middle"><p class="tableblock">Esteq.</p></td>
+</tr>
+</tbody>
+</table></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="listingblock">
-<div class="title">vscode における setting.json</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
-  // 保存時にフォーマットを実行
-  "editor.formatOnSave": true,
-  // 文字列長の最大値チェックを120に変更
-  "python.linting.flake8Args": [
-    "--max-line-length=120",
-  ],
-  // フォーマット時の文字列長の最大値を120に変更
-  "python.formatting.autopep8Args": [
-    "--max-line-length=120"
-  ]
-}</code></pre>
+<pre>====
+.A table containing another nested table
+[cols=".^,&lt;.^a,&gt;.^a"]
+|===
+| \[X_nY_m\]
+| * \(X\) a ante \(i\)
+* \(Y\) a ante \(j\)
+| [cols="&gt;.^"]
+!===
+! Trad. ! Stock. ! Esteq.
+!===
+|===
+====</pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_code_style">code style</h2>
+<h2 id="_quotes">Quotes</h2>
 <div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>ref. <a href="https://python-guideja.readthedocs.io/ja/latest/index.html">Python ヒッチハイク・ガイド</a></p>
-</li>
-<li>
-<p>ref. <a href="https://python-guideja.readthedocs.io/ja/latest/writing/style.html#id5">Python ヒッチハイク・ガイド - コードスタイル - 関数の引数</a></p>
-</li>
-</ul>
-</div>
-<div class="sect2">
-<h3 id="_キーワード引数を使うかどうか">キーワード引数を使うかどうか</h3>
 <div class="quoteblock">
 <blockquote>
 <div class="paragraph">
-<p>キーワード引数 は必須ではなく、デフォルト値を持ちます。
-これらは、関数に送信されるオプションのパラメータによく使用されます。
-関数に2つまたは3つ以上の位置パラメータがある場合、そのシグネチャは覚えにくいため、キーワード引数をデフォルト値で使用すると便利です。
-例えば、より完全な send 関数は send(message, to, cc=None, bcc=None) として定義できます。ここで、 cc と bcc はオプションで、別の値が渡されないときは None と評価されます。</p>
+<p>This is a block quote or a prose excerpt.
+This is subject to normal substitutions.</p>
 </div>
 </blockquote>
 <div class="attribution">
-&#8212; Python ヒッチハイク・ガイド - コードスタイル - 関数の引数
+&#8212; firstname lastname<br>
+<cite>movie title</cite>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>[quote, firstname lastname, movie title]
+____
+This is a block quote or a prose excerpt.
+This is subject to normal substitutions.
+____</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>「関数に2つまたは3つ以上の位置パラメータがある場合」とあるので、3つ以上の引数がある場合はキーワード引数がよいのかも。</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_アスタリスク">アスタリスク (*)</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>ref. <a href="https://qiita.com/LouiS0616/items/1bbe0a9bb93054f6c380">Python3.xのアスタリスク逆引き</a></p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="title">アスタリスク * (仮引数名アリ)</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">def useless_func(a, b, *args, c, d):
-    pass
-
-useless_func(1, 2, 3, 4, 5, 6)     # NG
-useless_func(1, 2, 3, 4, c=5, d=6) # OK
-
-# OK の場合は次のように割り当てられる
-# a: 1
-# b: 2
-# args: (3, 4)
-# c: 5
-# d: 6</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">アスタリスク * (仮引数名ナシ)</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python"># 仮引数名ナシの場合、以降(例では c, d)はキーワード引数を強制する
-def useless_func(a, b, *, c, d):
-    pass
-
-useless_func(1, 2, 3, 4, c=5, d=6)  # NG
-useless_func(1, 2, c=5, d=6)        # OK
-# OK の場合は次のように割り当てられる
-# a: 1
-# b: 2
-# c: 5
-# d: 6</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">アスタリスク **</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python"># ** はキーワード引数を辞書にまとめる
-def useless_func(**kwargs):
-    print(kwargs)
-
-useless_func(a=1, b=2, c=3)
-# {'a': 1, 'b': 2, 'c': 3}</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">ありとあらゆる引数を受け取る関数</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">def useless_func(*args, **kwargs):
-    print(args, kwargs)
-
-useless_func(1, 2, 3, a=1, b=2, c=3)
-# (1, 2, 3) {'a': 1, 'b': 2, 'c': 3}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_アンダーバー">アンダーバー (_)</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>ref. <a href="https://qiita.com/kiii142/items/6879cb065ad4c5f0b901">pythonのアンダーバーこれなんやねん</a></p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="title">return値を無視するための_</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">H,W,_ = img.shape</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">_function(x): 関数前に1つ</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">def _single_leading_underscore(x):
-    return n
-#weak "internal use" indicator. E.g. from M import *
-#does not import objects whose names start with an underscore.</code></pre>
-</div>
+<p>下記の書き方の場合は attribution にリンクが設定できる。</p>
 </div>
 <div class="quoteblock">
 <blockquote>
-<div class="paragraph">
-<p>基本的に外部からの参照を受け付けない，ってものにはアンダーバーを1つつけるというのがpythonの習わしのようです。</p>
-</div>
+I hold it that a little rebellion now and then is a good thing,
+and as necessary in the political world as storms in the physical.
 </blockquote>
 <div class="attribution">
-&#8212; _function(x): 関数前に1つ
+&#8212; <a href="https://example.com/">Thomas Jefferson</a><br>
+<cite>Papers of Thomas Jefferson: Volume 11</cite>
 </div>
 </div>
-<div class="listingblock">
-<div class="title">__function(x): クラス名の前に２つ</div>
+<div class="literalblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">def __double_leading_underscore:
-     return n
-#when naming a class attribute, invokes name mangling
-#(inside class FooBar, __boo becomes _FooBar__boo; see below).</code></pre>
+<pre>"I hold it that a little rebellion now and then is a good thing,
+and as necessary in the political world as storms in the physical."
+-- https://example.com/[Thomas Jefferson], Papers of Thomas Jefferson: Volume 11</pre>
 </div>
 </div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>外部からのアクセスを受け付けませんよ対策の１つと言えるのではないかと思います。</p>
-</div>
-</blockquote>
+<div class="verseblock">
+<pre class="content">This is a verse block.
+  Indents and endlines are preserved in verse blocks.</pre>
 <div class="attribution">
-&#8212; __function(x): クラス名の前に２つ
+&#8212; firstname lastname<br>
+<cite>poem title and more</cite>
 </div>
 </div>
-<div class="listingblock">
-<div class="title">function(x)_： 関数後に1つ</div>
+<div class="literalblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">def list_(x):
-    return n
-#used by convention to avoid conflicts with Python keyword</code></pre>
-</div>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>pythonの予約語をどーしても関数名に使いたい時には，後ろに１つ_つけてつかいわけろ，ということみたいです。</p>
-</div>
-</blockquote>
-<div class="attribution">
-&#8212; function(x)_： 関数後に1つ
-</div>
-</div>
-<div class="listingblock">
-<div class="title"><em>function</em>(x): 関数前後に2つずつ</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">def __double_leading_and_trailing_underscore__:
-    return n
-# "magic" objects or attributes that live in user-controlled
-# namespaces. E.g. __init__, __import__ or __file__. Never invent
-# such names; only use them as documented.``</code></pre>
-</div>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>オブジェクトの振る舞いを変更したり，クラスの性質にあった動きをさせたい時に使うものなんだそうです。</p>
-</div>
-</blockquote>
-<div class="attribution">
-&#8212; __function__(x): 関数前後に2つずつ
-</div>
-</div>
-<div class="paragraph">
-<p>ref. <a href="https://docs.python.org/ja/3/reference/datamodel.html#special-method-names">Python 言語リファレンス - 特殊メソッド名</a></p>
+<pre>[verse, firstname lastname, poem title and more]
+____
+This is a verse block.
+  Indents and endlines are preserved in verse blocks.
+____</pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_pytest">pytest</h2>
+<h2 id="_admonitions">Admonitions</h2>
 <div class="sectionbody">
-<div class="listingblock">
-<div class="title">vscode における setting.json</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
-  // pytest を有効化
-  "python.testing.pytestEnabled": true,
-}</code></pre>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+This is a tip. There are five admonition labels: Tip, Note, Important, Caution and Warning.
+</td>
+</tr>
+</table>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This is a note.
+</td>
+</tr>
+</table>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+This is important.
+</td>
+</tr>
+</table>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_alembic">alembic</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># インストール
-sudo apt install libpq-dev
-pipenv install psycopg2
-pipenv install --dev alembic
-
-# 初期化
-alembic init
-# マイグレーションファイル生成
-alembic revision -m "create users table"
-# マイグレーション
-alembic upgrade head
-alembic upgrade +2
-# マイグレーション(SQLの出力。実行はしない)
-alembic upgrade ae1027a6acf --sql
-# ロールバック
-alembic downgrade base
-alembic downgrade -1
-# 現在の状態
-alembic current
-# 履歴表示
-alembic history --verbose</code></pre>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_データ型一覧postgresql_ベース">データ型一覧(PostgreSQL ベース)</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>ref. <a href="https://www.postgresql.jp/document/11/html/datatype.html">PostgreSQL 11.5文書 / 第8章 データ型</a></p>
-</li>
-</ul>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Caution&#8201;&#8212;&#8201;be careful!
+</td>
+</tr>
+</table>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -846,194 +1562,121 @@ alembic history --verbose</code></pre>
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
+This is a warning.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>TIP: This is a tip. There are five admonition labels: Tip, Note, Important, Caution and Warning.
+
+NOTE: This is a note.
+
+IMPORTANT: This is important.
+
+CAUTION: Caution -- be careful!
+
+WARNING: This is a warning.</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_admonition_blocks">Admonition blocks</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">A "NOTE" type admonition</div>
 <div class="paragraph">
-<p>一部のみ。詳細はドキュメント参照。</p>
+<p>This is an example of an admonition block.</p>
+</div>
+<div class="paragraph">
+<p>Unlike an admonition paragraph, it may contain any AsciiDoc content.
+The style can be any one of the admonition labels:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>NOTE</p>
+</li>
+<li>
+<p>TIP</p>
+</li>
+<li>
+<p>WARNING</p>
+</li>
+<li>
+<p>CAUTION</p>
+</li>
+<li>
+<p>IMPORTANT</p>
+</li>
+</ul>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 40%;">
-<col style="width: 40%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">データ型</th>
-<th class="tableblock halign-left valign-top">指定値</th>
-<th class="tableblock halign-left valign-top">備考</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bigint</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.BIGINT(), sa.BigInteger(), sa.dialects.postgresql.BIGINT</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bit(1)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.dialects.postgresql.BIT</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.BOOLEAN(), sa.Boolean(), sa.dialects.postgresql.BOOLEAN</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bytea</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.Binary(), sa.LargeBinary(), sa.PickleType(), sa.dialects.postgresql.BYTEA</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">character varying</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.String(), sa.Unicode(), sa.VARCHAR(), sa.dialects.postgresql.VARCHAR</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">character varyingが長さ指定なしで使われた時は、いかなる長さの文字列でも受け付けます。(PostgreSQLの拡張)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">character varying(256)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.String(256), sa.VARCHAR(256)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">character varying[]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.ARRAY(sa.String())</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">character(1)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.CHAR(), sa.NCHAR(), sa.dialects.postgresql.CHAR</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cidr</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.dialects.postgresql.CIDR</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.DATE(), sa.Date(), sa.dialects.postgresql.DATE</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">double precision</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.FLOAT(), sa.Float(), sa.dialects.postgresql.FLOAT, sa.dialects.postgresql.DOUBLE_PRECISION</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">inet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.dialects.postgresql.INET</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.INT(), sa.INTEGER(), sa.Integer(), sa.dialects.postgresql.INTEGER</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">integer[]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.ARRAY(sa.Integer())</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">interval</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.Interval(), sa.dialects.postgresql.INTERVAL</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">json</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.JSON()</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">macaddr</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.dialects.postgresql.MACADDR</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">money</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.dialects.postgresql.MONEY</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">numeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.DECIMAL(), sa.NUMERIC(), sa.Numeric(), sa.dialects.postgresql.NUMERIC</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.dialects.postgresql.OID</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enum</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.Enum(ClassName, values_callable=lambda obj: [e.value for e in obj])</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">real</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.REAL(), sa.dialects.postgresql.REAL</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">regclass</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.dialects.postgresql.REGCLASS</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">smallint</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.SMALLINT(), sa.SmallInteger(), sa.dialects.postgresql.SMALLINT</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">text</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.TEXT(), sa.Text(), sa.UnicodeText(), sa.dialects.postgresql.TEXT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">いかなる長さの文字列でも格納できるtextをサポートします。 text型は標準SQLにはありませんが、多くの他のSQLデータベース管理システムも同様にサポートしています。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">time without time zone</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.TIME(), sa.Time(), sa.dialects.postgresql.TIME</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp with time zone</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.DateTime(timezone=True)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp with time zoneについて内部に格納されている値は常にUTCです。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp without time zone</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.DateTime(), sa.DateTime(timezone=False), sa.TIMESTAMP(), sa.dialects.postgresql.TIMESTAMP</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tsvector</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.dialects.postgresql.TSVECTOR</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">uuid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.dialects.postgresql.UUID</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
+<div class="listingblock">
+<div class="content">
+<pre>[NOTE]
+.A "NOTE" type admonition
+====
+This is an example of an admonition block.
+
+Unlike an admonition paragraph, it may contain any AsciiDoc content.
+The style can be any one of the admonition labels:
+
+* NOTE
+* TIP
+* WARNING
+* CAUTION
+* IMPORTANT
+====</pre>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. This is footnote text and will be displayed at the bottom of the article.
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
+Version 1.0<br>
 Last updated 2024-10-21 12:36:21 UTC
 </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
-<script>
-if (!hljs.initHighlighting.called) {
-  hljs.initHighlighting.called = true
-  ;[].slice.call(document.querySelectorAll('pre.highlight > code[data-lang]')).forEach(function (el) { hljs.highlightBlock(el) })
-}
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+})
+MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
+  MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
+    if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains("stemblock")) {
+      data.math.root.display = "block"
+    }
+    return data
+  })
+})
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
 </body>
 </html>

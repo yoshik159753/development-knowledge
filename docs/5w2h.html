@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.23">
-<title>python knowledge</title>
+<title>5W2H</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -436,590 +436,62 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/github.min.css">
 </head>
-<body class="article toc2 toc-left">
+<body class="article">
 <div id="header">
-<h1>python knowledge</h1>
-<div id="toc" class="toc2">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_for_文">for 文</a></li>
-<li><a href="#_vscode">vscode</a></li>
-<li><a href="#_code_format">code format</a></li>
-<li><a href="#_code_style">code style</a>
-<ul class="sectlevel2">
-<li><a href="#_キーワード引数を使うかどうか">キーワード引数を使うかどうか</a></li>
-<li><a href="#_アスタリスク">アスタリスク (*)</a></li>
-<li><a href="#_アンダーバー">アンダーバー (_)</a></li>
-</ul>
-</li>
-<li><a href="#_pytest">pytest</a></li>
-<li><a href="#_alembic">alembic</a>
-<ul class="sectlevel2">
-<li><a href="#_データ型一覧postgresql_ベース">データ型一覧(PostgreSQL ベース)</a></li>
-</ul>
-</li>
-</ul>
-</div>
+<h1>5W2H</h1>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="_for_文">for 文</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>ref. <a href="https://note.nkmk.me/python-for-usage/">Pythonのfor文によるループ処理（range, enumerate, zipなど）</a></p>
-</li>
-<li>
-<p>ref. <a href="https://note.nkmk.me/python-dict-keys-values-items/">Pythonの辞書（dict）のforループ処理（keys, values, items）</a></p>
-</li>
-<li>
-<p>ref. <a href="https://note.nkmk.me/python-list-comprehension/">Pythonリスト内包表記の使い方</a></p>
-</li>
-</ul>
-</div>
 <div class="listingblock">
-<div class="title">単純な for 文</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python"># range を使う (start, stop, step)
-for i in range(0, 3, 1):
-    print(i)
-# 0
-# 1
-# 2
+<pre class="highlightjs highlight nowrap"><code class="language-markdown hljs" data-lang="markdown"># タイトル
 
-# 配列を処理
-items = ['a', 'b', 'c']
-for item in items:
-    print(item)
-# a
-# b
-# c
+## (What) 作業内容について
 
-# 辞書のループ
-# items 以外にも keys や values がある
-d = {'a': 1, 'b': 2, 'c': 3}
-for key, value in d.items():
-    print(key, value)
-# a 1
-# b 2
-# c 3</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">リスト内包表記</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">odds = [i for i in range(10) if i % 2 == 1]
-print(odds)</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">for ループ正常終了後の処理: else</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">for i in range(0, 3, 1):
-    print(i)
-else:
-    # 最後まで実行された場合に処理
-    # break した場合は処理しない(たぶん例外でも処理しない)
-    print('Finish!')</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_vscode">vscode</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="title">vscode で読み込む env の指定</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
-  "python.envFile": "${workspaceFolder}/.env",
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_code_format">code format</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. 使用ライブラリ</caption>
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 60%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">項目</th>
-<th class="tableblock halign-left valign-top">値</th>
-<th class="tableblock halign-left valign-top">備考</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">formatter</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">autopep8</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/hhatto/autopep8" class="bare">https://github.com/hhatto/autopep8</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">checker</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">flake8</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://gitlab.com/pycqa/flake8" class="bare">https://gitlab.com/pycqa/flake8</a></p></td>
-</tr>
-</tbody>
-</table>
-<div class="listingblock">
-<div class="title">インストール</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># pipenv など仮想環境の使用を推奨
-pip install --dev autopep8 flake8</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">vscode における setting.json</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
-  // 保存時にフォーマットを実行
-  "editor.formatOnSave": true,
-  // 文字列長の最大値チェックを120に変更
-  "python.linting.flake8Args": [
-    "--max-line-length=120",
-  ],
-  // フォーマット時の文字列長の最大値を120に変更
-  "python.formatting.autopep8Args": [
-    "--max-line-length=120"
-  ]
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_code_style">code style</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>ref. <a href="https://python-guideja.readthedocs.io/ja/latest/index.html">Python ヒッチハイク・ガイド</a></p>
-</li>
-<li>
-<p>ref. <a href="https://python-guideja.readthedocs.io/ja/latest/writing/style.html#id5">Python ヒッチハイク・ガイド - コードスタイル - 関数の引数</a></p>
-</li>
-</ul>
-</div>
-<div class="sect2">
-<h3 id="_キーワード引数を使うかどうか">キーワード引数を使うかどうか</h3>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>キーワード引数 は必須ではなく、デフォルト値を持ちます。
-これらは、関数に送信されるオプションのパラメータによく使用されます。
-関数に2つまたは3つ以上の位置パラメータがある場合、そのシグネチャは覚えにくいため、キーワード引数をデフォルト値で使用すると便利です。
-例えば、より完全な send 関数は send(message, to, cc=None, bcc=None) として定義できます。ここで、 cc と bcc はオプションで、別の値が渡されないときは None と評価されます。</p>
-</div>
-</blockquote>
-<div class="attribution">
-&#8212; Python ヒッチハイク・ガイド - コードスタイル - 関数の引数
-</div>
-</div>
-<div class="paragraph">
-<p>「関数に2つまたは3つ以上の位置パラメータがある場合」とあるので、3つ以上の引数がある場合はキーワード引数がよいのかも。</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_アスタリスク">アスタリスク (*)</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>ref. <a href="https://qiita.com/LouiS0616/items/1bbe0a9bb93054f6c380">Python3.xのアスタリスク逆引き</a></p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="title">アスタリスク * (仮引数名アリ)</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">def useless_func(a, b, *args, c, d):
-    pass
+- 何がしたいか
+- 何ができるのか
 
-useless_func(1, 2, 3, 4, 5, 6)     # NG
-useless_func(1, 2, 3, 4, c=5, d=6) # OK
+## (Why) 背景について
 
-# OK の場合は次のように割り当てられる
-# a: 1
-# b: 2
-# args: (3, 4)
-# c: 5
-# d: 6</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">アスタリスク * (仮引数名ナシ)</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python"># 仮引数名ナシの場合、以降(例では c, d)はキーワード引数を強制する
-def useless_func(a, b, *, c, d):
-    pass
+- なぜしたいのか
+- なぜほしいのか
 
-useless_func(1, 2, 3, 4, c=5, d=6)  # NG
-useless_func(1, 2, c=5, d=6)        # OK
-# OK の場合は次のように割り当てられる
-# a: 1
-# b: 2
-# c: 5
-# d: 6</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">アスタリスク **</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python"># ** はキーワード引数を辞書にまとめる
-def useless_func(**kwargs):
-    print(kwargs)
+## (Who) 担当について
 
-useless_func(a=1, b=2, c=3)
-# {'a': 1, 'b': 2, 'c': 3}</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">ありとあらゆる引数を受け取る関数</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">def useless_func(*args, **kwargs):
-    print(args, kwargs)
+- 登場人物について
+- 登場人物の役割について
 
-useless_func(1, 2, 3, a=1, b=2, c=3)
-# (1, 2, 3) {'a': 1, 'b': 2, 'c': 3}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_アンダーバー">アンダーバー (_)</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>ref. <a href="https://qiita.com/kiii142/items/6879cb065ad4c5f0b901">pythonのアンダーバーこれなんやねん</a></p>
-</li>
-</ul>
-</div>
-<div class="listingblock">
-<div class="title">return値を無視するための_</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">H,W,_ = img.shape</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">_function(x): 関数前に1つ</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">def _single_leading_underscore(x):
-    return n
-#weak "internal use" indicator. E.g. from M import *
-#does not import objects whose names start with an underscore.</code></pre>
-</div>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>基本的に外部からの参照を受け付けない，ってものにはアンダーバーを1つつけるというのがpythonの習わしのようです。</p>
-</div>
-</blockquote>
-<div class="attribution">
-&#8212; _function(x): 関数前に1つ
-</div>
-</div>
-<div class="listingblock">
-<div class="title">__function(x): クラス名の前に２つ</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">def __double_leading_underscore:
-     return n
-#when naming a class attribute, invokes name mangling
-#(inside class FooBar, __boo becomes _FooBar__boo; see below).</code></pre>
-</div>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>外部からのアクセスを受け付けませんよ対策の１つと言えるのではないかと思います。</p>
-</div>
-</blockquote>
-<div class="attribution">
-&#8212; __function(x): クラス名の前に２つ
-</div>
-</div>
-<div class="listingblock">
-<div class="title">function(x)_： 関数後に1つ</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">def list_(x):
-    return n
-#used by convention to avoid conflicts with Python keyword</code></pre>
-</div>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>pythonの予約語をどーしても関数名に使いたい時には，後ろに１つ_つけてつかいわけろ，ということみたいです。</p>
-</div>
-</blockquote>
-<div class="attribution">
-&#8212; function(x)_： 関数後に1つ
-</div>
-</div>
-<div class="listingblock">
-<div class="title"><em>function</em>(x): 関数前後に2つずつ</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">def __double_leading_and_trailing_underscore__:
-    return n
-# "magic" objects or attributes that live in user-controlled
-# namespaces. E.g. __init__, __import__ or __file__. Never invent
-# such names; only use them as documented.``</code></pre>
-</div>
-</div>
-<div class="quoteblock">
-<blockquote>
-<div class="paragraph">
-<p>オブジェクトの振る舞いを変更したり，クラスの性質にあった動きをさせたい時に使うものなんだそうです。</p>
-</div>
-</blockquote>
-<div class="attribution">
-&#8212; __function__(x): 関数前後に2つずつ
-</div>
-</div>
-<div class="paragraph">
-<p>ref. <a href="https://docs.python.org/ja/3/reference/datamodel.html#special-method-names">Python 言語リファレンス - 特殊メソッド名</a></p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_pytest">pytest</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="title">vscode における setting.json</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
-  // pytest を有効化
-  "python.testing.pytestEnabled": true,
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_alembic">alembic</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash"># インストール
-sudo apt install libpq-dev
-pipenv install psycopg2
-pipenv install --dev alembic
+## (When) アクション契機、スケジュールなどについて
 
-# 初期化
-alembic init
-# マイグレーションファイル生成
-alembic revision -m "create users table"
-# マイグレーション
-alembic upgrade head
-alembic upgrade +2
-# マイグレーション(SQLの出力。実行はしない)
-alembic upgrade ae1027a6acf --sql
-# ロールバック
-alembic downgrade base
-alembic downgrade -1
-# 現在の状態
-alembic current
-# 履歴表示
-alembic history --verbose</code></pre>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_データ型一覧postgresql_ベース">データ型一覧(PostgreSQL ベース)</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>ref. <a href="https://www.postgresql.jp/document/11/html/datatype.html">PostgreSQL 11.5文書 / 第8章 データ型</a></p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>一部のみ。詳細はドキュメント参照。</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 40%;">
-<col style="width: 40%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">データ型</th>
-<th class="tableblock halign-left valign-top">指定値</th>
-<th class="tableblock halign-left valign-top">備考</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bigint</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.BIGINT(), sa.BigInteger(), sa.dialects.postgresql.BIGINT</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bit(1)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.dialects.postgresql.BIT</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.BOOLEAN(), sa.Boolean(), sa.dialects.postgresql.BOOLEAN</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">bytea</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.Binary(), sa.LargeBinary(), sa.PickleType(), sa.dialects.postgresql.BYTEA</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">character varying</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.String(), sa.Unicode(), sa.VARCHAR(), sa.dialects.postgresql.VARCHAR</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">character varyingが長さ指定なしで使われた時は、いかなる長さの文字列でも受け付けます。(PostgreSQLの拡張)</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">character varying(256)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.String(256), sa.VARCHAR(256)</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">character varying[]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.ARRAY(sa.String())</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">character(1)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.CHAR(), sa.NCHAR(), sa.dialects.postgresql.CHAR</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cidr</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.dialects.postgresql.CIDR</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.DATE(), sa.Date(), sa.dialects.postgresql.DATE</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">double precision</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.FLOAT(), sa.Float(), sa.dialects.postgresql.FLOAT, sa.dialects.postgresql.DOUBLE_PRECISION</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">inet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.dialects.postgresql.INET</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">integer</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.INT(), sa.INTEGER(), sa.Integer(), sa.dialects.postgresql.INTEGER</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">integer[]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.ARRAY(sa.Integer())</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">interval</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.Interval(), sa.dialects.postgresql.INTERVAL</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">json</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.JSON()</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">macaddr</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.dialects.postgresql.MACADDR</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">money</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.dialects.postgresql.MONEY</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">numeric</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.DECIMAL(), sa.NUMERIC(), sa.Numeric(), sa.dialects.postgresql.NUMERIC</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.dialects.postgresql.OID</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enum</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.Enum(ClassName, values_callable=lambda obj: [e.value for e in obj])</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">real</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.REAL(), sa.dialects.postgresql.REAL</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">regclass</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.dialects.postgresql.REGCLASS</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">smallint</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.SMALLINT(), sa.SmallInteger(), sa.dialects.postgresql.SMALLINT</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">text</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.TEXT(), sa.Text(), sa.UnicodeText(), sa.dialects.postgresql.TEXT</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">いかなる長さの文字列でも格納できるtextをサポートします。 text型は標準SQLにはありませんが、多くの他のSQLデータベース管理システムも同様にサポートしています。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">time without time zone</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.TIME(), sa.Time(), sa.dialects.postgresql.TIME</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp with time zone</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.DateTime(timezone=True)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp with time zoneについて内部に格納されている値は常にUTCです。</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">timestamp without time zone</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.DateTime(), sa.DateTime(timezone=False), sa.TIMESTAMP(), sa.dialects.postgresql.TIMESTAMP</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tsvector</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.dialects.postgresql.TSVECTOR</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">uuid</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sa.dialects.postgresql.UUID</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-</div>
+- いつ使うのか
+- いつ発生するのか
+- スケジューリングの観点
+
+## (Where) システムの構築について
+
+- システムはどこで稼働するのか
+- 外部の依存システムについて
+- ディレクトリの構成とか
+- ファイルの格納先とか
+- バックログの記載先とか
+- メールの送信先とか
+
+## (How) やること、やらないことについて
+
+・...
+・...
+・...
+
+## (How Much / How Many) 費用感について (とか？)
+
+・...
+・...
+・...
+
+## その他メモ
+
+・...
+・...
+・...</code></pre>
 </div>
 </div>
 </div>
