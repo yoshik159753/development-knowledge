@@ -442,12 +442,78 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
+<li><a href="#_us_キーボードを使う">us キーボードを使う</a>
+<ul class="sectlevel2">
+<li><a href="#_キーボードの設定">キーボードの設定</a></li>
+<li><a href="#_ubuntu_の設定">ubuntu の設定</a></li>
+</ul>
+</li>
 <li><a href="#_ubuntu_の_dcok_の見た目を_macos_っぽく">ubuntu の dcok の見た目を macos っぽく</a></li>
 <li><a href="#_ubuntu_でクラムシェル">ubuntu でクラムシェル</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
+<div class="sect1">
+<h2 id="_us_キーボードを使う">us キーボードを使う</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_キーボードの設定">キーボードの設定</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>レイアウト設定で capslock を control に上書き</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ubuntu_の設定">ubuntu の設定</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Fcitx5 と Mozc をインストール</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sudo apt install fcitx5 fcitx5-mozc</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>システム設定の言語サポート設定を開き、キーボード入力に使う IM システムを Fcitx5 に変更</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>システム設定 &gt; 地域と言語 &gt; システム &gt; 言語サポート &gt; キーボード入力に使うIMシステム</code></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>再起動</p>
+</li>
+<li>
+<p>Fcitx5 の設定を開き入力メソッドに Mozc を追加</p>
+</li>
+<li>
+<p>Fcitx5 の設定を開きタブのグローバルオプションの「入力メソッドの切り替え」に期待する半角全角切り替えを設定</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>ctrl+space</code> とか</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_ubuntu_の_dcok_の見た目を_macos_っぽく">ubuntu の dcok の見た目を macos っぽく</h2>
 <div class="sectionbody">
@@ -496,7 +562,7 @@ sudo systemctl restart systemd-logind</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-10-22 12:26:15 UTC
+Last updated 2024-11-02 09:35:25 UTC
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
