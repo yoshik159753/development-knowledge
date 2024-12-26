@@ -499,12 +499,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_vagrant">vagrant</a></li>
 <li><a href="#_dd">dd</a></li>
 <li><a href="#_factor">factor</a></li>
-<li><a href="#_git">git</a>
-<ul class="sectlevel2">
-<li><a href="#_git_author_の上書き">git author の上書き</a></li>
-<li><a href="#_差分のあるファイルを抽出してコピー">差分のあるファイルを抽出してコピー</a></li>
-</ul>
-</li>
+<li><a href="#_git">git</a></li>
 <li><a href="#_curl">curl</a></li>
 <li><a href="#_sql">sql</a></li>
 <li><a href="#_uuidgen">uuidgen</a></li>
@@ -2721,18 +2716,22 @@ git diff --find-renames
 git diff -M50%</code></pre>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_git_author_の上書き">git author の上書き</h3>
 <div class="listingblock">
+<div class="title">古いコミットのファイルを別名でチェックアウトする</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">git show $COMMIT:$FILE &gt; $NEW_FILENAME
+git cat-file blob $COMMIT:$FILE &gt; $NEW_FILENAME</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">git author の上書き</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash"># 文字列で username と email を指定する
 git commit --amend --author="username &lt;user@example.com&gt;"</code></pre>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_差分のあるファイルを抽出してコピー">差分のあるファイルを抽出してコピー</h3>
 <div class="listingblock">
+<div class="title">差分のあるファイルを抽出してコピー</div>
 <div class="content">
 <pre class="highlightjs highlight nowrap"><code class="language-bash hljs" data-lang="bash">#!/bin/sh
 DEST=pickup
@@ -2748,7 +2747,6 @@ else
   echo "[IGNORE] ${filepath}"
 fi
 done</code></pre>
-</div>
 </div>
 </div>
 </div>
@@ -4578,7 +4576,7 @@ apt-cache show ${package}</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-11-02 09:35:25 UTC
+Last updated 2024-12-26 14:05:33 UTC
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
